@@ -1,12 +1,15 @@
 const amqp = require("amqplib/callback_api");
 
-const amqpURL =
-  "amqps://fijcqmws:c4_StLAvPKcs9FarGdgXBWy0oZjnTz7e@rat.rmq2.cloudamqp.com/fijcqmws";
+const { start, amqpURL } = require("./config");
+const amqpURL_ = start.concat(amqpURL);
 
-  const filename = "me.jpeg";
-  const result = "HAPPY DIWALI 😎";
+const filename1 = "dp.png";
+const result1 = "Door_One";
 
-amqp.connect(amqpURL, (err, connection) => {
+const filename2 = "dp.png";
+const result2 = "Door_Two";
+
+amqp.connect(amqpURL_, (err, connection) => {
   if (err) {
     throw err;
   }
@@ -16,15 +19,19 @@ amqp.connect(amqpURL, (err, connection) => {
     }
     let queueName = "CloudAMQP";
     let message = {
-      result: `${result}`,
-      filename: `${filename}`,
+      result1: `${result1}`,
+      filename1: `${filename1}`,
+      result2: `${result2}`,
+      filename2: `${filename2}`,
     };
     channel.assertQueue(queueName, {
       durable: false,
     });
     channel.sendToQueue(queueName, Buffer.from(JSON.stringify(message)));
-    console.log(`Published Message : ${message.result}`);
-    console.log(`Published Filename : ${message.filename}`);
+    console.log(`Published Message_1 : ${message.result1}`);
+    console.log(`Published Filename_1 : ${message.filename1}`);
+    console.log(`Published Message_2 : ${message.result2}`);
+    console.log(`Published Filename_2 : ${message.filename2}`);
     setTimeout(() => {
       connection.close();
     });

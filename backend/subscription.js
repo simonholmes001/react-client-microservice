@@ -3,14 +3,14 @@ const path = require("path");
 
 const amqp = require("amqplib/callback_api");
 
-const amqpURL =
-  "amqps://fijcqmws:c4_StLAvPKcs9FarGdgXBWy0oZjnTz7e@rat.rmq2.cloudamqp.com/fijcqmws";
+const { start,amqpURL } = require("./config");
+const amqpURL_ = start.concat(amqpURL)
 
 const fileName = "rabbitmq_message.json";
 const filePath = path.join("messages", fileName);
 
 function Subscription() {
-  amqp.connect(amqpURL, function (err, connection) {
+  amqp.connect(amqpURL_, function (err, connection) {
     if (err) {
       throw err;
     }
@@ -35,7 +35,5 @@ function Subscription() {
     });
   });
 }
-
-// Subscription();
 
 module.exports = { Subscription };

@@ -14,6 +14,8 @@ const server = http.createServer(app);
 
 app.use(cors());
 
+const { port } = require("./config");
+
 const watcher = require("./watcher");
 const subscription = require("./subscription");
 
@@ -66,8 +68,6 @@ app.use((req, res, next) => {
 
 app.use("/getImage", Query);
 
-const PORT = 8000;
-
-server.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server listening on port: ${port}`);
 });
