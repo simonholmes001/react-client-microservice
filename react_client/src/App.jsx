@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import store from "./app/store";
 
-import { Footer, Navbar, Welcome2 } from "./components";
+import { Footer, Navbar, Section } from "./components";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <div className="gradient-bg-welcome">
         <Navbar />
         <Provider store={store}>
-          <Welcome2 />
+          <Section />
         </Provider>
       </div>
       {/* <Footer />  */}

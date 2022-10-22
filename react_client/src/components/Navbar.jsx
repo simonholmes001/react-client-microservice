@@ -21,7 +21,7 @@ const Navbar = () => {
         />
       </div>
       <ul className="text-white md:flex hidden list-none flex-row items-center flex-initial">
-        {["Tarazona 4.0", "|", "AIVI Injection Control", "|", "AI Solutions", "|"].map((item, index) => (
+        {["Tarazona 4.0", "|", "Artificial Intelligence for Visual Inspection", "|", "AI Solutions", "|"].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))}
         <li
