@@ -6,7 +6,7 @@ const socket = io.connect("http://localhost:8000");
 const commonStyles =
   "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-xl font-light text-white";
 
-const Welcome2 = () => {
+const Section = () => {
   const [leftfilename, setLeftfilename] = useState("");
   const [leftresult, setLeftresult] = useState("");
 
@@ -104,4 +104,4 @@ const Welcome2 = () => {
   );
 };
 
-export default Welcome2;
+export default Section;
