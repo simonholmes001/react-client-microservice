@@ -1,8 +1,8 @@
-[![release](https://img.shields.io/badge/release-v0.0.1-9cf)](https://github.com/simonholmes001/react-client-microservice)
+[![release](https://img.shields.io/badge/release-v1.0.0-9cf)](https://github.com/simonholmes001/react-client-microservice)
 
 
 # React Client Microservice
-React client communicating with a node backend through [socket.io](https://socket.io/). The node backend receives messages through a [Rabbitmq](https://www.rabbitmq.com/) message broker, which then transfers this same informaiton to the Client through the socket.io connection. Finally, the Client recovers information based on the received message, and displays the correspinding information through a GET request to the backend.
+React client communicating with a node backend through [socket.io](https://socket.io/). The node backend receives messages through a [Rabbitmq](https://www.rabbitmq.com/) message broker, which then transfers this same informaiton to the Client through the socket.io connection. Finally, the Client recovers information based on the received message, and displays the corresponding information through a GET request to the backend.
 
 ## Contents
 ### [Architecture](#architecture-1)
