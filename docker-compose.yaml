@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  backend:
+    build: ./backend
+    container_name: react-client-microservice_backend
+    ports:
+      - '8000:8000'
+  client:
+    build: ./react_client
+    container_name: react-client-microservice_client
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
